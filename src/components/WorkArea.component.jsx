@@ -3,13 +3,9 @@ import TopBarComponent from "./TopBar.component";
 
 const WorkAreaComponent = () => {
   return (
-    <div className="flex flex-col">
-      <div className="h-full">
-        <TopBarComponent />
-      </div>
-      <div className="flex-1 border border-neutral-300 rounded-sm m-4">
-        <p>H1</p>
-      </div>
+    <div className="flex flex-col h-full">
+      <TopBarComponent />
+      <div className="flex-1 border border-neutral-300 rounded-sm m-4 overflow-y-scroll no-scrollbar"></div>
     </div>
   );
 };
