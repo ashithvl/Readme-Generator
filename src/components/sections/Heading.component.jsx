@@ -44,7 +44,6 @@ const HeadingComponent = ({ attributes }) => {
 
   useEffect(() => {
     if (link && link.url) {
-      console.log("log");
       setState({ ...link, isValid: true });
     }
   }, []);

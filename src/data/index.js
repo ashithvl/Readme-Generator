@@ -18,10 +18,7 @@ const builder = [
     content: "This is a heading",
     level: 2,
     markup: "##",
-    link: {
-      url: "",
-      alt: "",
-    },
+    link: null,
   },
   {
     order: 3,
@@ -29,10 +26,7 @@ const builder = [
     content: "This is a heading",
     level: 3,
     markup: "###",
-    link: {
-      url: "",
-      alt: "",
-    },
+    link: null,
   },
   {
     order: 4,
@@ -40,10 +34,7 @@ const builder = [
     content: "This is a heading",
     level: 4,
     markup: "####",
-    link: {
-      url: "",
-      alt: "",
-    },
+    link: null,
   },
   {
     order: 5,
@@ -59,6 +50,25 @@ const builder = [
     content: "This is a heading",
     level: 6,
     markup: "######",
+    link: null,
+  },
+  {
+    order: 7,
+    type: TYPES.PARAGRAPH,
+    content: "This is a paragraph with links",
+    level: 0,
+    markup: null,
+    link: {
+      url: "https://www.forzotechlabs.com",
+      alt: "Forzo Website",
+    },
+  },
+  {
+    order: 8,
+    type: TYPES.PARAGRAPH,
+    content: "This is a paragraph",
+    level: 0,
+    markup: null,
     link: null,
   },
 ];
