@@ -12,7 +12,10 @@ const SideBarComponent = () => {
       </div>
       <div className="py-4 pr-4 flex flex-wrap gap-4">
         {SECTIONS.map((section) => (
-          <div className="flex-1 flex flex-col border rounded-sm p-1 py-2 items-center justify-center cursor-pointer">
+          <div
+            key={section.name}
+            className="flex-1 flex flex-col border rounded-sm p-1 py-2 items-center justify-center cursor-pointer"
+          >
             <p className="w-20 flex justify-center text-2xl text-neutral-600 py-1">
               {section.icon}
             </p>
