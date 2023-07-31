@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { AiOutlineBold, AiOutlineItalic } from "react-icons/ai";
 import { BsTextCenter } from "react-icons/bs";
 import { MdOutlineDelete, MdSubscript, MdSuperscript } from "react-icons/md";
-import {BiLinkAlt} from "react-icons/bi"
+import { BiLinkAlt } from "react-icons/bi"
+import { LuSmilePlus } from "react-icons/lu"
 
 const Paragraphcomponent = ({ attributes }) => {
   const { content } = attributes;
@@ -36,6 +37,7 @@ const Paragraphcomponent = ({ attributes }) => {
         <MdSubscript />
         <MdSuperscript />
         <BiLinkAlt />
+        <LuSmilePlus />
       </div>
       <p
       className={`${isBold ? 'font-bold' : 'normal'} ${isItalic ? 'italic' : 'normal'} ${isCentered ? 'text-center' : ''}`}

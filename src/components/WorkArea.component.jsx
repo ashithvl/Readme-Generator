@@ -7,6 +7,11 @@ import HeadingComponent from "./sections/Heading.component";
 import Paragraphcomponent from "./sections/Paragraph.component";
 import Dividercomponent from "./sections/Divider.component";
 import Filecomponent from "./sections/File.component";
+import ListComponent from "./sections/List.component";
+import CodeComponent from "./sections/Code.component";
+import BlockquoteComponent from "./sections/Blockquote.component";
+import TableComponent from "./sections/Table.component";
+import VideoComponent from "./sections/Video.component";
 
 const WorkAreaComponent = () => {
   return (
@@ -18,11 +23,17 @@ const WorkAreaComponent = () => {
             return <HeadingComponent attributes={data} key={data.order} />;
           }else if(data.type === TYPES.PARAGRAPH){
             return <Paragraphcomponent attributes={data} key={data.order} />
+          }else if(data.type === TYPES.CODE){
+            return <CodeComponent attributes={data} key={data.order} />
           }
           return null;
         })}
           <Dividercomponent />
           <Filecomponent />
+          <ListComponent />
+          <BlockquoteComponent />
+          <TableComponent />
+          <VideoComponent />
       </div>
     </div>
   );
