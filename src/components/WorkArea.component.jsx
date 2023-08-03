@@ -12,6 +12,7 @@ import CodeComponent from "./sections/Code.component";
 import BlockquoteComponent from "./sections/Blockquote.component";
 import TableComponent from "./sections/Table.component";
 import VideoComponent from "./sections/Video.component";
+import CheckListComponent from "./sections/CheckList.component";
 
 const WorkAreaComponent = () => {
   return (
@@ -31,6 +32,7 @@ const WorkAreaComponent = () => {
           <Dividercomponent />
           <Filecomponent />
           <ListComponent />
+          <CheckListComponent />
           <BlockquoteComponent />
           <TableComponent />
           <VideoComponent />
