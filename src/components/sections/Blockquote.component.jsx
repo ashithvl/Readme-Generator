@@ -1,21 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import SectionContainer from "../Section.container";
 
-const BlockquoteComponent = () => {
-  const [blockQuote, setBlockQuote] = useState([
-    "This is a blockquote",
-    "This is a blockquote 2",
-  ]);
+const BlockquoteComponent = ({ attributes }) => {
+  const { content } = attributes;
 
   return (
-    <div className="border border-neutral-400 border-dashed p-2 mb-4">
-      {blockQuote.map((quote) => {
-        return (
-          <blockquote className="border-l-2 border-l-neutral-400 pl-2">
-            {quote}
-          </blockquote>
-        );
-      })}
-    </div>
+    <SectionContainer>
+      <p className="border-l-4 border-l-neutral-400 p-2">{content}</p>
+    </SectionContainer>
   );
 };
 

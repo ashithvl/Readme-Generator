@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { MdOutlineDelete } from "react-icons/md";
 import { BiLinkAlt } from "react-icons/bi";
 import { AiFillCloseCircle, AiFillCheckCircle } from "react-icons/ai";
-import { H_LEVELS } from "../../constants";
+import { H_LEVELS, H_OPTIONS } from "../../constants";
+import SectionContainer from "../Section.container";
 
 const INITIAL_STATE = { url: null, alt: null, isValid: false };
 
@@ -14,31 +15,16 @@ const HeadingComponent = ({ attributes }) => {
   const [state, setState] = useState(INITIAL_STATE);
 
   const style = () => {
-    let headingStyle = "";
-    switch (level) {
-      case 1:
-        headingStyle += `text-5xl`;
-        break;
-      case 2:
-        headingStyle += `text-4xl`;
-        break;
-      case 3:
-        headingStyle += `text-3xl`;
-        break;
-      case 4:
-        headingStyle += `text-2xl`;
-        break;
-      case 5:
-        headingStyle += `text-xl`;
-        break;
-      case 6:
-        headingStyle += `text-lg`;
-        break;
-      default:
-        break;
-    }
+    const headingStyles = {
+      [H_LEVELS.H1]: "text-5xl",
+      [H_LEVELS.H2]: "text-4xl",
+      [H_LEVELS.H3]: "text-3xl",
+      [H_LEVELS.H4]: "text-2xl",
+      [H_LEVELS.H5]: "text-xl",
+      [H_LEVELS.H6]: "text-lg",
+    };
+    let headingStyle = headingStyles[level] || "";
     if (link && link.url) headingStyle += ` text-sky-600`;
-
     return headingStyle;
   };
 
@@ -49,7 +35,7 @@ const HeadingComponent = ({ attributes }) => {
   }, []);
 
   return (
-    <div className="relative border border-neutral-400 border-dashed p-2 mb-4 ">
+    <SectionContainer className="relative">
       <div className="absolute -right-3 text-red-500 top-2 rounded-full bg-white p-1">
         <MdOutlineDelete />
       </div>
@@ -85,7 +71,7 @@ const HeadingComponent = ({ attributes }) => {
         </div>
       ) : (
         <div className="absolute right-6 text-neutral-500 border border-neutral-300 -top-3 rounded bg-neutral-100 p-1 flex items-center text-xs cursor-default">
-          {H_LEVELS.map((hLevel) => (
+          {H_OPTIONS.map((hLevel) => (
             <p
               key={hLevel.level}
               className={`px-1 hover:text-emerald-700 ${
@@ -109,7 +95,7 @@ const HeadingComponent = ({ attributes }) => {
       )}
 
       <p className={`${style()} `}>{content}</p>
-    </div>
+    </SectionContainer>
   );
 };
 

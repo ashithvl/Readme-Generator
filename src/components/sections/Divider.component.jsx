@@ -1,11 +1,12 @@
 import React from "react";
+import SectionContainer from "../Section.container";
 
-const Dividercomponent = () => {
+const DividerComponent = () => {
   return (
-    <div className="relative border border-neutral-400 border-dashed px-2 py-4 mb-4 hover:border-green-400">
-      <div className="h-px bg-neutral-500 w-full"></div>
-    </div>
+    <SectionContainer className="p-4">
+      <div className="h-px bg-neutral-400 w-full"></div>
+    </SectionContainer>
   );
 };
 
-export default Dividercomponent;
+export default DividerComponent;

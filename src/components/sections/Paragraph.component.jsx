@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import { AiOutlineBold, AiOutlineItalic } from "react-icons/ai";
 import { BsTextCenter } from "react-icons/bs";
 import { MdOutlineDelete, MdSubscript, MdSuperscript } from "react-icons/md";
-import { BiLinkAlt } from "react-icons/bi"
-import { LuSmilePlus } from "react-icons/lu"
+import { BiLinkAlt } from "react-icons/bi";
+import { LuSmilePlus } from "react-icons/lu";
+import SectionContainer from "../Section.container";
 
 const Paragraphcomponent = ({ attributes }) => {
   const { content } = attributes;
@@ -22,11 +23,11 @@ const Paragraphcomponent = ({ attributes }) => {
   };
 
   const handleTeaxtCenter = () => {
-    setIsCentered(!isCentered)
-  }
+    setIsCentered(!isCentered);
+  };
 
   return (
-    <div className="relative border border-neutral-400 border-dashed p-2 mb-4 hover:border-green-400">
+    <SectionContainer>
       <div className="absolute -right-3 text-red-500 top-2 rounded-full bg-white p-1">
         <MdOutlineDelete />
       </div>
@@ -40,11 +41,13 @@ const Paragraphcomponent = ({ attributes }) => {
         <LuSmilePlus />
       </div>
       <p
-      className={`${isBold ? 'font-bold' : 'normal'} ${isItalic ? 'italic' : 'normal'} ${isCentered ? 'text-center' : ''}`}
+        className={`${isBold ? "font-bold" : "normal"} ${
+          isItalic ? "italic" : "normal"
+        } ${isCentered ? "text-center" : ""}`}
       >
         {content}
       </p>
-    </div>
+    </SectionContainer>
   );
 };
 
